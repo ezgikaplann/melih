@@ -10,7 +10,7 @@
   <style>
     :root{
       /* Boyutlar ekrana göre ölçeklenir */
-      --sun-size: clamp(140px, 18vw, 220px);
+      --sun-size: clamp(180px, 22vw, 280px); /* 160px, 20vw, 250px'den daha da artırdım */
       --card-w: min(680px, 92vw);
       --pad: clamp(14px, 2.5vw, 24px);
 
@@ -61,9 +61,21 @@
     .star{position:absolute; width:2px; height:2px; background:white; border-radius:50%; opacity:0.9; animation:twinkle 2s infinite alternate;}
     @keyframes twinkle{from{opacity:0.3; transform:scale(.9)} to{opacity:1; transform:scale(1.1)}}
 
-    .sea{flex:1; background:linear-gradient(to bottom,var(--sea1),var(--sea2)); position:relative;}
-    .sea::before{content:""; position:absolute; inset:0; background:repeating-linear-gradient(180deg,rgba(255,255,255,.15) 0 2px,transparent 2px 6px); opacity:.2; animation:wave 6s linear infinite;}
-    @keyframes wave{from{background-position-y:0} to{background-position-y:100%}}
+    .sea{
+      flex: 0.4; /* 0.3'ten 0.4'e çıkardım - biraz daha doğal oran */
+      background:linear-gradient(to bottom,var(--sea1),var(--sea2)); 
+      position:relative;
+      margin-top: auto;
+    }
+    
+    .sea::before{
+      content:"";
+      position:absolute; 
+      inset:0; 
+      background:repeating-linear-gradient(180deg,rgba(255,255,255,.08) 0 2px,transparent 2px 8px); /* Dalga efektini daha doğal yaptım */
+      opacity:.15; /* 0.2'den 0.15'e düşürdüm - daha yumuşak */
+      animation:wave 8s linear infinite; /* 6s'den 8s'ye çıkardım - daha yavaş ve doğal */
+    }
 
     /* İçerik kartı */
     .wrap{position:relative; z-index:10; height:100%; width:100%; display:grid; place-items:center; padding:var(--pad);}    
