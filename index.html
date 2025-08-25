@@ -278,6 +278,11 @@
       title.textContent = '🤍';
       title.style.color = '#FFD166';
       
+      // Kedi GIF'ini images klasöründeki görsel ile değiştir
+      const gifBox = document.querySelector('.gif-box img');
+      gifBox.src = "./images/m.png"; // Bu satırı değiştirin
+      gifBox.alt = "Yeni görsel açıklaması";
+      
       // Butonları gizle
       document.getElementById('ctaArea').style.display = 'none';
     });
