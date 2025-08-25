@@ -195,7 +195,7 @@
     }
     
     // Sadece tıklandığında yer değiştir
-    noBtn.addEventListener('click', (e)=>{ 
+    noBtn.addEventListener('click', (e)=>{
       e.preventDefault(); 
       moveNo(); 
     });
@@ -275,16 +275,26 @@
       
       // Evet butonuna tıklandığında mesajı değiştir
       const title = document.querySelector('h1');
-      //title.textContent = '🤍';
+      title.textContent = '🤍';
       title.style.color = '#FFD166';
       
       // Kedi GIF'ini images klasöründeki görsel ile değiştir
       const gifBox = document.querySelector('.gif-box img');
-      gifBox.src = "./images/m.png"; // Bu satırı değiştirin
+      gifBox.src = "./images/m.png";
       gifBox.alt = "Yeni görsel açıklaması";
       
       // Butonları gizle
       document.getElementById('ctaArea').style.display = 'none';
+      
+      // Başlığı da gizle - sadece görsel kalsın
+      title.style.display = 'none';
+      
+      // Görseli daha küçük yap ve ortala
+      gifBox.style.width = '50vw'; // 80vw'den 50vw'ye düşürdüm
+      gifBox.style.maxWidth = '400px'; // 600px'den 400px'e düşürdüm
+      gifBox.style.height = 'auto';
+      gifBox.style.borderRadius = '20px';
+      gifBox.style.boxShadow = '0 20px 60px rgba(0,0,0,0.3)';
     });
   </script>
 </body>
